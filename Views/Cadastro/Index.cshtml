@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<div class="text-center container p-3">
+    <h1 class="display-4 mb-5 fw-bold">Cadastro</h1>
+    <form class="container d-flex flex-column gap-3">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nome completo" id="nome">
+            </div>
+            <div class="col">
+                <input type="email" class="form-control" placeholder="E-mail" id="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="(62) 9 9999-9999" id="telefone">
+            </div>
+            <div class="col">
+                <input type="password" class="form-control" placeholder="Senha" id="senha">
+            </div>
+        </div>
+        <div class="d-flex justify-content-start gap-2">
+            <button class="btn btn-outline-primary" id="btnCadastrar">Cadastrar</button>
+            <button class="btn btn-outline-danger">Cancelar</button>
+        </div>
+
+        <script>
+            var nome = document.querySelector("#nome");
+            var email = document.querySelector("#email");
+            var telefone = document.querySelector("#telefone");
+            var senha = document.querySelector("#senha");
+            var btnCadastrar = document.querySelector("#btnCadastrar");
+
+            btnCadastrar.onclick = (e) => {
+                e.preventDefault();
+
+                if(!nome.value || !email.value || !telefone.value || !senha.value){
+                    alert("Preencher todos campos");
+                    return;
+                }else{
+                    alert('Sucesso confirme seu email para entrar')
+                }
+            }
+        </script>
+    </form>
+</div>
