@@ -6,6 +6,7 @@ public class LoginController : Controller
 {
     public IActionResult Index()
     {
+        ViewData["Title"] = "Login Page";
         return View();
     }
 }
