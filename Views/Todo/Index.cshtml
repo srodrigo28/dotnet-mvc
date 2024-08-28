@@ -1,7 +1,11 @@
-﻿@{
+﻿@model twtodos.Models.Todo
+@{
     ViewData["Title"] = "Todo";
 }
 
 <div class="text-center">
     <h1 class="display-4">Todo</h1>
+    <p>@Model.Id</p>
+    <p>@Model.Title</p>
+    <p>@Model.Deadline</p>
 </div>
