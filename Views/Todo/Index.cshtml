@@ -1,11 +1,36 @@
-﻿@model twtodos.Models.Todo
+﻿@* @model twtodos.Models.Todo *@
+@model List<twtodos.Models.Todo>
 @{
     ViewData["Title"] = "Todo";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Todo</h1>
-    <p>@Model.Id</p>
-    <p>@Model.Title</p>
-    <p>@Model.Deadline</p>
-</div>
+<h1 class="display-4">Todo</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Titulo</th>
+            <th>Criado em</th>
+            <th>Data de entrega</th>
+            <th>Finalizado em</th>
+            <th class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todo in Model){
+            <tr>
+                <td>@todo.Id</td>
+                <td>@todo.Title</td>
+                <td>@todo.CreatedAt</td>
+                <td>@todo.Deadline</td>
+                <td>@todo.FinishedAt</td>
+                <td class="text-center">
+                    <button class="btn btn-warning">Ed</button>
+                    <button class="btn btn-primary">Delh</button>
+                    <button class="btn btn-danger">X</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
