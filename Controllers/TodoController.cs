@@ -18,4 +18,18 @@ public class TodoController : Controller
         var todos = _context.Todos.ToList();
         return View(todos);
     }
+
+    public IActionResult Create()
+    {
+        ViewData["Title"] = "Cadastro Tarefas";
+        return View("Form");
+    }
+
+    [HttpPost]
+     public IActionResult Create(Todo todo)
+    {
+        _context.Todos.Add(todo);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }

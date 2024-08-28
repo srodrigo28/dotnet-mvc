@@ -1,0 +1,19 @@
+@model twtodos.Models.Todo
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST">
+    <div class="row mb-3">
+        <div class="col-md-8 col-sm-12">
+            <label asp-for="Title">Título</label>
+            <input type="text" class="form-control" asp-for="Title" required>
+        </div>
+
+        <div class="col">
+            <label asp-for="Deadline">Data de Entrega</label>
+            <input type="date" class="form-control text-center" asp-for="Deadline" required>
+        </div>
+    </div>
+
+    <button class="btn btn-outline-primary" type="submit"><i class="bi bi-rocket-takeoff-fill"></i></button>
+</form>

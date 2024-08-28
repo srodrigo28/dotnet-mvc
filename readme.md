@@ -33,7 +33,7 @@ dotnet ef migrations add CreateTodoTable
 dotnet ef database update
 
 
-#### Ref.
+#### Ref. 1:23
 ```
 https://www.youtube.com/watch?v=aYgAb5O_QXg
 ```
